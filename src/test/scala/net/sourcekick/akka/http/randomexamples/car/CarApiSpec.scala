@@ -29,7 +29,7 @@ class CarApiSpec extends AbstractRouteTest with TimeInstances {
 
   // trying to find out why compiler gets exceedingly slow when there are many tests
 
-  "PointRoutes" must {
+  "CarRoutes" must {
 
     "return car" in {
       Get(carsPath()) ~> CarApi.routes ~> check {

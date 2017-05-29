@@ -22,11 +22,11 @@ import akka.pattern.pipe
 
 object CarApi {
 
-  private val deviceRejectionHandler = RejectionHandlers.builder.result()
+  private val carRejectionHandler = RejectionHandlers.builder.result()
 
   val logger: Logger = LoggerFactory.getLogger(getClass)
 
-  private[car] val routes: Route = handleRejections(deviceRejectionHandler) {
+  private[car] val routes: Route = handleRejections(carRejectionHandler) {
     val eh = ExceptionHandler {
       case ex @ (_: Exception) =>
         logger.error("Error occured.", ex)
